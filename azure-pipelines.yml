@@ -43,6 +43,13 @@ stages:
         ArtifactName: 'drop'
         publishLocation: 'Container'
 
+    - task: AzureWebApp@1
+      inputs:
+        azureSubscription: 'Free Trial(81d74218-6f1e-4599-9ff5-eee7b8bbf6e0)'
+        appType: 'webApp'
+        appName: 'myaspdotnet'
+        package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        deploymentMethod: 'auto'
 
 
     
